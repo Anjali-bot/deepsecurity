@@ -1,0 +1,258 @@
+<html lang="en" class="no-js">
+<head>
+
+    <!-- update the version number as needed -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-remote-config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/init.js?useEmulator=true"></script>
+<script src="getapp.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cyclops Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Playfair+Display:700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="./jsQR.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+    <style>
+      
+      h1 {
+        margin: 10px 0;
+        font-size: 40px;
+      }
+
+      #loadingMessage {
+        text-align: center;
+        padding: 10px;
+
+      }
+
+      #canvas {
+        width:   250px;
+         height: 250px;
+        margin: 3;    }
+
+      #output {
+        margin-top: 20px;
+    
+        padding: 10px;
+        padding-bottom: 0;
+      }
+
+      #output div {
+        padding-bottom: 10px;
+        word-wrap: break-word;
+      }
+
+      #noQRFound {
+        text-align: center;
+      }
+    </style>
+    <style>
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+#lol {
+  align-self: right;
+}
+
+
+</style>
+</head>
+
+<body    class="hero">
+
+
+  <div>
+    <h1 class="hero-title mt-0">
+
+        Welcome To Raftel
+
+      </h1>
+      <p class="hero-paragraph" id = "ele">To Enter Please Do Either Of The Steps</p> 
+
+  </div>
+
+<div>
+  
+<div class="hero-app" style = "position:absolute; left: 950px; top:230px;" >
+              <div class="hero-app-illustration">
+                <svg width="999" height="931" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient x1="92.827%" y1="0%" x2="53.422%" y2="80.087%" id="hero-shape-a">
+                            <stop stop-color="#F9425F" offset="0%"/>
+                            <stop stop-color="#F97C58" stop-opacity="0" offset="100%"/>
+                        </linearGradient>
+                        <linearGradient x1="92.827%" y1="0%" x2="53.406%" y2="80.12%" id="hero-shape-b">
+                            <stop stop-color="#47A1F9" offset="0%"/>
+                            <stop stop-color="#F9425F" stop-opacity="0" offset="80.532%"/>
+                            <stop stop-color="#FDFFDA" stop-opacity="0" offset="100%"/>
+                        </linearGradient>
+                        <linearGradient x1="8.685%" y1="23.733%" x2="85.808%" y2="82.837%" id="hero-shape-c">
+                            <stop stop-color="#FFF" stop-opacity=".48" offset="0%"/>
+                            <stop stop-color="#FFF" stop-opacity="0" offset="100%"/>
+                        </linearGradient>
+                        <linearGradient x1="79.483%" y1="15.903%" x2="38.42%" y2="70.124%" id="hero-shape-d">
+                            <stop stop-color="#47A1F9" offset="0%"/>
+                            <stop stop-color="#FDFFDA" stop-opacity="0" offset="100%"/>
+                        </linearGradient>
+                        <linearGradient x1="99.037%" y1="26.963%" x2="24.582%" y2="78.557%" id="hero-shape-e">
+                            <stop stop-color="#FDFFDA" stop-opacity=".64" offset="0%"/>
+                            <stop stop-color="#F97C58" stop-opacity=".24" offset="42.952%"/>
+                            <stop stop-color="#F9425F" stop-opacity="0" offset="100%"/>
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                        <g class="hero-shape-top">
+                      <g class="is-moving-object is-translating" data-translating-factor="280">
+                              <path d="M680.188 0c-23.36 69.79-58.473 98.3-105.34 85.531-70.301-19.152-189.723-21.734-252.399 91.442-62.676 113.175-144.097 167.832-215.195 118.57C59.855 262.702 24.104 287.85 0 370.988L306.184 566.41c207.164-4.242 305.67-51.612 295.52-142.11-10.152-90.497 34.533-163.55 134.054-219.16l4.512-119.609L680.188 0z" fill="url(#hero-shape-a)" transform="translate(1)"/>
+                      </g>
+                      <g class="is-moving-object is-translating" data-translating-factor="100">
+                        <path d="M817.188 222c-23.36 69.79-58.473 98.3-105.34 85.531-70.301-19.152-189.723-21.734-252.399 91.442-62.676 113.175-144.097 167.832-215.195 118.57-47.399-32.841-83.15-7.693-107.254 75.445L443.184 788.41c207.164-4.242 305.67-51.612 295.52-142.11-10.152-90.497 34.533-163.55 134.054-219.16l4.512-119.609L817.188 222z" fill="url(#hero-shape-b)" transform="rotate(-53 507.635 504.202)"/>
+                      </g>
+                        </g>
+                        <g transform="translate(191 416)">
+                      <g class="is-moving-object is-translating" data-translating-factor="50">
+                              <circle fill="url(#hero-shape-c)" cx="336" cy="190" r="190"/>
+                      </g>
+                      <g class="is-moving-object is-translating" data-translating-factor="80">
+                              <path d="M683.766 133.043c-112.048-90.805-184.688-76.302-217.92 43.508-33.23 119.81-125.471 124.8-276.722 14.972-3.156 120.356 53.893 200.09 171.149 239.203 175.882 58.67 346.695-130.398 423.777-239.203 51.388-72.536 17.96-92.03-100.284-58.48z" fill="url(#hero-shape-d)"/>
+                      </g>
+                      <g class="is-moving-object is-translating" data-translating-factor="100">
+                        <path d="M448.206 223.247c-97.52-122.943-154.274-117.426-170.26 16.55C261.958 373.775 169.717 378.766 1.222 254.77c-9.255 95.477 47.794 175.211 171.148 239.203 185.032 95.989 424.986-180.108 424.986-239.203 0-39.396-49.717-49.904-149.15-31.523z" fill="url(#hero-shape-e)" transform="matrix(-1 0 0 1 597.61 0)"/>
+                      </g>
+                    </g>
+                    </g>
+                </svg>
+              </div>
+
+
+
+
+
+</div>
+
+
+<section >
+
+    <div>
+      <img id="scream" style = "position:absolute; left: 280px; top:230px;" width="250 " height="250" src="registration form (1).png" alt="QR Code">
+          <a class="button button-primary button-shadow"  style = "position:absolute; left: 320px; top: 520px;"  href="#">Generate Pass</a>
+  </div>
+  <div>
+  <div hidden style="position:absolute; left: 370px; top: 190px;"><b>Data:</b> <span id="outputData"></span></div>
+  <div id="loadingMessage"> </div>
+  <canvas id="canvas" style="position:absolute; left: 850px; top:230px;" hidden></canvas>
+  <div id="output" hidden>
+    <div id="outputMessage"></div>
+    <div hidden><b></b> <span id="outputData"></span></div>
+    <div hidden><b></b> <span id="outputData1"></span></div>
+  </div>
+  <script>
+    var video = document.createElement("video");
+    var canvasElement = document.getElementById("canvas");
+    var canvas = canvasElement.getContext("2d");
+    var loadingMessage = document.getElementById("loadingMessage");
+    var outputContainer = document.getElementById("output");
+    var outputMessage = document.getElementById("outputMessage");
+    var outputData = document.getElementById("outputData");
+    var outputData1 = document.getElementById("outputData1");
+    function drawLine(begin, end, color) {
+      canvas.beginPath();
+      canvas.moveTo(begin.x, begin.y);
+      canvas.lineTo(end.x, end.y);
+      canvas.lineWidth = 4;
+      canvas.strokeStyle = color;
+      canvas.stroke();
+    }
+
+    // Use facingMode: environment to attemt to get the front camera on phones
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
+      video.srcObject = stream;
+      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+      video.play();
+      requestAnimationFrame(tick);
+    });
+
+
+    function tick() {
+      loadingMessage.innerText = ""
+       var string1 =  "no data";
+      if (video.readyState === video.HAVE_ENOUGH_DATA) {
+        loadingMessage.hidden = true;
+        canvasElement.hidden = false;
+        outputContainer.hidden = false;
+        canvasElement.height = video.videoHeight;
+        canvasElement.width = video.videoWidth;
+        canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+        var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+        var code = jsQR(imageData.data, imageData.width, imageData.height, {
+          inversionAttempts: "dontInvert",
+        });
+        if (code) {
+          drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+          drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+          drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+          outputMessage.hidden = true;
+          outputData.parentElement.hidden = false;
+          outputData.innerText = code.data;
+          string1 = String(code.data);
+          b(string1);
+        } else {
+          outputMessage.hidden = false;
+          outputData.parentElement.hidden = true;
+          outputData1.parentElement.hidden = true;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+  </script>
+  <script type="text/javascript">
+    function b(s)
+    {
+      if(s!=""){
+      getDataFire(s);
+    }
+  }
+  </script>
+
+                 
+  
+
+                        
+
+                            <a id ="lol" class="button button-primary button-shadow" href="#"   style = "position:absolute; left: 900px; top:520px;" style="float: right;">Visitor's Pass</a>
+
+
+
+    
+
+
+
+  </div>
+  
+
+</section>
+
+
+</body>
+</html>
