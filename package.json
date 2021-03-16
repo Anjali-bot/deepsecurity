@@ -1,0 +1,17 @@
+{
+  "name": "cyclops_qr",
+  "version": "1.0.0",
+  "main": "getDatajs.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^8.3.0",
+    "firebase-admin": "^9.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
